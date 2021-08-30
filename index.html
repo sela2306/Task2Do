@@ -16,14 +16,45 @@
 </head>
 <body>
     <header>
-        <h1>Simple Task Planner</h1>
+        <div class="p-3  mb-2 bg-primary text-white">.
+        <h1><img class="logo-img" src="/images/task-image.png" alt="Simple task planner">Simple Task Planner</h1>
+    </div>
     </header>
     <main>
         <!-- new task button -->
         <!-- filter dropdown box with to do, in progress, review and done options -->
 
-        <!-- Start card -->
+       
+        <section id="task-cards">
+            <article class="container">
+ <!-- cards here - created a div to make cards responsive -->
+            <div class="row justify-content-center">
+            <!-- card 1 -->
+            <div class="col-sm-8 col-md-4 my-3">
+                <!-- paste bootstrap card here -->
+                <div class="card border-success mb-3" style="max-width: 18rem;">
+                    <div class="card-header bg-transparent border-success">Order cake
+                      <img src="/images/done.png" alt="">
+        
+                    </div>
+                    <div class="card-body text-success">
+                      <h5 class="card-title">Success card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-success "><div class="d-grid gap-2 d-md-block">
+                        <button class="btn btn-primary" type="button">Edit</button>
+                        <button class="btn btn-primary" type="button">Delete</button>
+                      </div></div>
+                  </div>
 
+
+
+              </div></div>
+              
+
+                 <!-- End card -->
+            </article>
+        </section>
         <!-- End card -->
 
     </main>
