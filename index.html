@@ -16,38 +16,41 @@
   </head>
   <body>
     <header>
-      <div class="p-3 mb-2 bg-primary text-white">
-        .
-        <h1>
+      <div class=" header-img p-3 mb-2 bg-primary bg-gradient text-white">
+
+        <div class="text-center">
+        <h1 >
           <img
             class="logo-img"
             src="./images/task-image.png"
-            alt="Simple task planner"
+            alt="task planner"
           />Simple Task Planner
-        </h1>
+        </h1></div>
       </div>
     </header>
     <main>
       <!-- new task button -->
       <!-- filter dropdown box with to do, in progress, review and done options -->
     <!-- Sumitha start button -->
-    <div class="d-grid gap-2 col-2">
+    <section id="newTaskButton" class="container">
+    <div class="d-grid col-2 text-nowrap">
       <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         New Task
         </button>
     </div>
+  </section>
     <!-- Sumitha end button -->
       <section id="task-cards">
-        <article class="container">
+        <article class="container mt-5 ">
           <!-- cards here - created a div to make cards responsive -->
-          <div class="row justify-content-center">
+          <div class="row ">
             <!-- card 1 -->
             <div class="col-sm-8 col-md-4 my-3">
               <!-- paste bootstrap card here -->
-              <div class="card border-success mb-3" style="max-width: 18rem">
+              <div class="card border-success mb-3" >
                 <div class="card-header bg-transparent border-success">
                     <div class="d-flex justify-content-between">
-                        <div class="align-self-center"><h5>Order cake</h5></div>
+                        <div class="align-self-center"><h5>Order cake</h5><p id="status" class="text-muted fst-italic">In progress</p></div>
                         <div><img src="./images/inprogress.png""></div>
                       </div>
                   
@@ -62,8 +65,8 @@
                   <p>Sumitha</p>
                 </div>
                 <div class="card-footer bg-transparent border-success">
-                  <div class="d-grid gap-2 d-md-block">
-                    <button class="btn btn-primary" type="button">Edit</button>
+                  <div>
+                    <button class="btn btn-primary " type="button">Edit</button>
                     <button class="btn btn-primary" type="button">
                       Delete
                     </button>
@@ -72,25 +75,26 @@
               </div> 
             </div>
 
-              <div class="col-sm-8 col-md-4 my-3">
+            <div class="col-sm-8 col-md-4 my-3">
               <!-- card 2 -->
-              <div class="card border-success mb-3" style="max-width: 18rem">
+              <div class="card border-success mb-3" >
                 <div class="card-header bg-transparent border-success">
                   <div class="d-flex justify-content-between">
-                    <div class="align-self-center"><h5>Order cake</h5></div>
+                    <div class="align-self-center"><h5>Decorations</h5><p id="status" class="text-muted fst-italic">Review</p></div>
                     <div><img src="./images/review.png""></div>
                   </div>
                 </div>
                 <div class="card-body text-success">
-                  <h5 class="card-title">Due: 2 September 2011</h5>
+                  
                   <p class="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
+                  <h6 class="card-title">Due: 2 September 2011</h6>
                   <p>Tara</p>
                 </div>
                 <div class="card-footer bg-transparent border-success">
-                  <div class="d-grid gap-2 d-md-block">
+                  <div>
                     <button class="btn btn-primary" type="button">Edit</button>
                     <button class="btn btn-primary" type="button">
                       Delete
@@ -104,23 +108,24 @@
 
               <div class="col-sm-8 col-md-4 my-3">
                 <!-- card 3 -->
-                <div class="card border-success mb-3" style="max-width: 18rem">
+                <div class="card border-success mb-3" >
                   <div class="card-header bg-transparent border-success">
                     <div class="d-flex justify-content-between">
-                      <div class="align-self-center"><h5>Order cake</h5></div>
-                      <div><img src="./images/inprogress.png""></div>
+                      <div class="align-self-center"><h5>Send invites</h5><p id="status" class="text-muted fst-italic">Done</p></div>
+                      <div><img src="./images/done.png""></div>
                     </div>
                   </div>
                   <div class="card-body text-success">
-                    <h5 class="card-title">Due: 2 September 2011</h5>
+                    
                     <p class="card-text">
                       Some quick example text to build on the card title and make
                       up the bulk of the card's content.
                     </p>
-                    <p>Tara</p>
+                    <h6 class="card-title">Due: 2 September 2021</h6>
+                    <p>Sumitha</p>
                   </div>
                   <div class="card-footer bg-transparent border-success">
-                    <div class="d-grid gap-2 d-md-block">
+                    <div>
                       <button class="btn btn-primary" type="button">Edit</button>
                       <button class="btn btn-primary" type="button">
                         Delete
@@ -133,22 +138,24 @@
 
               <div class="col-sm-8 col-md-4 my-3">
               <!-- Card 4 -->
-              <div class="card border-success mb-3" style="max-width: 18rem">
+              <div class="card border-success mb-3" >
                 <div class="card-header bg-transparent border-success">
                   <div class="d-flex justify-content-between">
-                    <div class="align-self-center"><h5>Order cake</h5></div>
+                    <div class="align-self-center"><h5>Order cake</h5><p id="status" class="text-muted fst-italic">To do</p></div>
                     <div><img src="./images/todo.png""></div>
                   </div>
                 </div>
                 <div class="card-body text-success">
-                  <h5 class="card-title">Success card title</h5>
+                  
                   <p class="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
+                  <h6 class="card-title">Due: 5 September, 2021</h6>
+                  <p>Nicole</p>
                 </div>
                 <div class="card-footer bg-transparent border-success">
-                  <div class="d-grid gap-2 d-md-block">
+                  <div>
                     <button class="btn btn-primary" type="button">Edit</button>
                     <button class="btn btn-primary" type="button">
                       Delete
@@ -159,22 +166,24 @@
 
               <div class="col-sm-8 col-md-4 my-3">
               <!-- card 5 -->
-              <div class="card border-success mb-3" style="max-width: 18rem">
+              <div class="card border-success mb-3" >
                 <div class="card-header bg-transparent border-success">
                   <div class="d-flex justify-content-between">
-                    <div class="align-self-center"><h5>Order cake</h5></div>
+                    <div class="align-self-center"><h5>Order cake</h5><p id="status" class="text-muted fst-italic">In progress</p></div>
                     <div><img src="./images/inprogress.png""></div>
                   </div>
                 </div>
                 <div class="card-body text-success">
-                  <h5 class="card-title">Success card title</h5>
+
                   <p class="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
+                  <h6 class="card-title">Due: 5 September, 2021</h6>
+                  <p>Sumitha</p>
                 </div>
                 <div class="card-footer bg-transparent border-success">
-                  <div class="d-grid gap-2 d-md-block">
+                  <div>
                     <button class="btn btn-primary" type="button">Edit</button>
                     <button class="btn btn-primary" type="button">
                       Delete
@@ -245,9 +254,13 @@
 <!-- Sumitha end modal -->
     </main>
     <!-- start footer -->
-    <footer class="p-3 mt-5">
-      <p>@ Copyright Generation Australia, 2021
-      <br />Designed by Sumitha and Tara</p>
+    <footer class="p-3 mt-5 container-fluid bg-light  ">
+      <div class="d-flex flex-wrap container justify-content-between">
+        <div class="align-self-center">@ Copyright Generation Australia, 2021 </div>
+        <div>Designed by Sumitha and Tara</div>
+      </div>
+
+
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
