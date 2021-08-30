@@ -11,7 +11,7 @@
       integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <title>Simple Task Planner</title>
   </head>
   <body>
@@ -21,7 +21,7 @@
         <h1>
           <img
             class="logo-img"
-            src="/images/task-image.png"
+            src="./images/task-image.png"
             alt="Simple task planner"
           />Simple Task Planner
         </h1>
@@ -40,15 +40,19 @@
               <!-- paste bootstrap card here -->
               <div class="card border-success mb-3" style="max-width: 18rem">
                 <div class="card-header bg-transparent border-success">
-                  <h6>Order cake <img data-bs-toggle="tooltip" data-bs-placement="top" title="Done" src="/images/done.png" alt="Done" /></h6>
+                    <div class="d-flex justify-content-between">
+                        <div class="align-self-center"><h5>Order cake</h5></div>
+                        <div><img src="./images/inprogress.png""></div>
+                      </div>
                   
                 </div>
                 <div class="card-body text-success">
-                  <h5 class="card-title">Done: 30 August, 2021</h5>
+                  
                   <p class="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
+                  <h6 class="card-title">Done: 30 August, 2021</h6>
                   <p>Sumitha</p>
                 </div>
                 <div class="card-footer bg-transparent border-success">
@@ -66,8 +70,10 @@
               <!-- card 2 -->
               <div class="card border-success mb-3" style="max-width: 18rem">
                 <div class="card-header bg-transparent border-success">
-                  Order cake
-                  <img data-bs-toggle="tooltip" data-bs-placement="top" title="Review"src="/images/review.png" alt="" />
+                  <div class="d-flex justify-content-between">
+                    <div class="align-self-center"><h5>Order cake</h5></div>
+                    <div><img src="./images/review.png""></div>
+                  </div>
                 </div>
                 <div class="card-body text-success">
                   <h5 class="card-title">Due: 2 September 2011</h5>
@@ -88,12 +94,45 @@
               </div>
               </div>
 
+
+
               <div class="col-sm-8 col-md-4 my-3">
-              <!-- Card 3 -->
+                <!-- card 3 -->
+                <div class="card border-success mb-3" style="max-width: 18rem">
+                  <div class="card-header bg-transparent border-success">
+                    <div class="d-flex justify-content-between">
+                      <div class="align-self-center"><h5>Order cake</h5></div>
+                      <div><img src="./images/inprogress.png""></div>
+                    </div>
+                  </div>
+                  <div class="card-body text-success">
+                    <h5 class="card-title">Due: 2 September 2011</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make
+                      up the bulk of the card's content.
+                    </p>
+                    <p>Tara</p>
+                  </div>
+                  <div class="card-footer bg-transparent border-success">
+                    <div class="d-grid gap-2 d-md-block">
+                      <button class="btn btn-primary" type="button">Edit</button>
+                      <button class="btn btn-primary" type="button">
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+
+              <div class="col-sm-8 col-md-4 my-3">
+              <!-- Card 4 -->
               <div class="card border-success mb-3" style="max-width: 18rem">
                 <div class="card-header bg-transparent border-success">
-                  Order cake
-                  <img src="/images/todo.png" alt="" />
+                  <div class="d-flex justify-content-between">
+                    <div class="align-self-center"><h5>Order cake</h5></div>
+                    <div><img src="./images/todo.png""></div>
+                  </div>
                 </div>
                 <div class="card-body text-success">
                   <h5 class="card-title">Success card title</h5>
@@ -113,11 +152,13 @@
               </div></div>
 
               <div class="col-sm-8 col-md-4 my-3">
-              <!-- card 4 -->
+              <!-- card 5 -->
               <div class="card border-success mb-3" style="max-width: 18rem">
                 <div class="card-header bg-transparent border-success">
-                  Order cake
-                  <img src="/images/inprogress.png" alt="" />
+                  <div class="d-flex justify-content-between">
+                    <div class="align-self-center"><h5>Order cake</h5></div>
+                    <div><img src="./images/inprogress.png""></div>
+                  </div>
                 </div>
                 <div class="card-body text-success">
                   <h5 class="card-title">Success card title</h5>

@@ -30,106 +30,133 @@
     <main>
       <!-- new task button -->
       <!-- filter dropdown box with to do, in progress, review and done options -->
-<!-- section 2 -->
-<section id="task-cards">
-    <h2 class="bg-light text-center text-secondary py-3">My Tasks</h2>
-    <article class="container mt-5">
-      <p>
-        Add new task
-      </p>
-      
-      <!-- cards here - created a div to make cards responsive -->
-      <div class="row justify-content-center">
-        <!-- card 1 -->
-        <div class="col-sm-8 col-md-4 my-3">
-          <!-- paste bootstrap card here -->
-          <div class="card">
-            <img
-              src="images/Atlasian.png"
-              class="card-img-top img-fluid"
-              alt="Atlasian Logo"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Atlasian</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make
-                up the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
 
-        <!-- card 2 -->
-        <div class="col-sm-8 col-md-4 my-3">
-          <!-- paste bootstrap card here -->
-          <div class="card">
-            <img
-              src="images/Airbnb.png"
-              class="card-img-top"
-              alt="Airbnb Logo"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Airbnb</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make
-                up the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- card 3 -->
-        <div class="col-sm-8 col-md-4 mt-3">
-          <!-- paste bootstrap card here -->
-          <div class="card">
-            <img
-              src="images/GitHub.png"
-              class="card-img-top"
-              alt="GitHub Logo"
-            />
-            <div class="card-body">
-              <h5 class="card-title">GitHub</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make
-                up the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">More</a>
-            </div>
-          </div>
-        </div>
-
-                <!-- card 2 -->
-                <div class="col-sm-8 col-md-4 my-3">
-                    <!-- paste bootstrap card here -->
-                    <div class="card">
-                      <img
-                        src="images/Airbnb.png"
-                        class="card-img-top"
-                        alt="Airbnb Logo"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Airbnb</h5>
-                        <p class="card-text">
-                          Some quick example text to build on the card title and make
-                          up the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn btn-primary">More</a>
-                      </div>
-                    </div>
+      <section id="task-cards">
+        <article class="container">
+          <!-- cards here - created a div to make cards responsive -->
+          <div class="row justify-content-center">
+            <!-- card 1 -->
+            <div class="col-sm-8 col-md-4 my-3">
+              <!-- paste bootstrap card here -->
+              <div class="card border-success mb-3" style="max-width: 18rem">
+                <div class="card-header bg-transparent border-success">
+                  <div class="d-flex justify-content-between">
+                    <div class="align-self-center"><h5>Order cake</h5></div>
+                    <div><img src="/images/inprogress.png""></div>
                   </div>
+                </div>
+                <div class="card-body text-success">
+                  <h5 class="card-title">Done: 30 August, 2021</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <p>Sumitha</p>
+                </div>
+                <div class="card-footer bg-transparent border-success">
+                  <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-primary" type="button">Edit</button>
+                    <button class="btn btn-primary" type="button">
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                  
-      </div>
-    </article>
-  </section>
+            <div class="col-sm-8 col-md-4 my-3">
+              <!-- card 2 -->
+              <div class="card border-success mb-3" style="max-width: 18rem">
+                <div class="card-header bg-transparent border-success">
+                  Order cake
+                  <img
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="Review"
+                    src="/images/review.png"
+                    alt=""
+                  />
+                </div>
+                <div class="card-body text-success">
+                  <h5 class="card-title">Due: 2 September 2011</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <p>Tara</p>
+                </div>
+                <div class="card-footer bg-transparent border-success">
+                  <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-primary" type="button">Edit</button>
+                    <button class="btn btn-primary" type="button">
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <div class="col-sm-8 col-md-4 my-3">
+              <!-- Card 3 -->
+              <div class="card border-success mb-3" style="max-width: 18rem">
+                <div class="card-header bg-transparent border-success">
+                  Order cake
+                  <img src="/images/todo.png" alt="" />
+                </div>
+                <div class="card-body text-success">
+                  <h5 class="card-title">Success card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+                <div class="card-footer bg-transparent border-success">
+                  <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-primary" type="button">Edit</button>
+                    <button class="btn btn-primary" type="button">
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-8 col-md-4 my-3">
+              <!-- card 4 -->
+              <div class="card border-success mb-3" style="max-width: 18rem">
+                <div class="card-header bg-transparent border-success">
+                  Order cake
+                  <img src="/images/inprogress.png" alt="" />
+                </div>
+                <div class="card-body text-success">
+                  <h5 class="card-title">Success card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+                <div class="card-footer bg-transparent border-success">
+                  <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-primary" type="button">Edit</button>
+                    <button class="btn btn-primary" type="button">
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End card -->
+        </article>
+      </section>
+      <!-- End card -->
     </main>
     <!-- start footer -->
-    <footer>
-      <p>@ Copyright Generation Australia, 2021</p>
-      <p>Designed by Sumitha and Tara</p>
+    <footer class="p-3 mt-5">
+      <p>
+        @ Copyright Generation Australia, 2021 <br />Designed by Sumitha and
+        Tara
+      </p>
     </footer>
   </body>
 </html>
