@@ -32,14 +32,26 @@
       <!-- new task button -->
       <!-- filter dropdown box with to do, in progress, review and done options -->
     <!-- Sumitha start button -->
-    <section id="newTaskButton" class="container">
+    <section id="newTaskButton" class="container d-flex justify-content-between">
     <div class="d-grid col-2 text-nowrap">
       <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         New Task
         </button>
     </div>
+    <div >
+    <label for="filter-by-status" class="col-form-label">Filter by Status</label>
+                  <div class="dropdown">
+                     <select name="filter-by-status" id="filter-by-status">
+                        <option value="to-do">To-Do</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="review">Review</option>
+                        <option value="done">Done</option>
+                      </select>
+                </div>
+              </div>
+    
   </section>
-    <!-- Sumitha end button -->
+    <!-- end button -->
       <section id="task-cards">
         <article class="container mt-5 ">
           <!-- cards here - created a div to make cards responsive -->
@@ -51,7 +63,7 @@
                 <div class="card-header bg-transparent border-success">
                     <div class="d-flex justify-content-between">
                         <div class="align-self-center"><h5>Order cake</h5><p id="status" class="text-muted fst-italic">In progress</p></div>
-                        <div><img src="./images/inprogress.png""></div>
+                        <div><img src="./images/inprogress.png"></div>
                       </div>
                   
                 </div>
@@ -81,7 +93,7 @@
                 <div class="card-header bg-transparent border-success">
                   <div class="d-flex justify-content-between">
                     <div class="align-self-center"><h5>Decorations</h5><p id="status" class="text-muted fst-italic">Review</p></div>
-                    <div><img src="./images/review.png""></div>
+                    <div><img src="./images/review.png"></div>
                   </div>
                 </div>
                 <div class="card-body text-success">
@@ -170,7 +182,7 @@
                 <div class="card-header bg-transparent border-success">
                   <div class="d-flex justify-content-between">
                     <div class="align-self-center"><h5>Order cake</h5><p id="status" class="text-muted fst-italic">In progress</p></div>
-                    <div><img src="./images/inprogress.png""></div>
+                    <div><img src="./images/inprogress.png"></div>
                   </div>
                 </div>
                 <div class="card-body text-success">
@@ -199,7 +211,7 @@
         </article>
       </section>
       <!-- End card -->
-      <!-- Sumitha start Modal -->
+      <!-- Start Modal -->
    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
     <div class="modal-content">
@@ -208,21 +220,22 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+          
         <!-- Modal Body -->
         <form>
             <div class="mb-3">
               <label for="task-name" class="col-form-label">Task Name</label>
-              <input type="text" class="form-control" id="task-name">
+              <input type="text" class="form-control" id="task-name" name="task-name">
             </div>
 
             <div class="mb-3">
               <label for="description" class="col-form-label">Description</label>
-              <textarea class="form-control" id="description"></textarea>
+              <textarea class="form-control" id="description" name="description"></textarea>
             </div>
 
             <div class="mb-3">
                 <label for="assigned-to" class="col-form-label">Assigned To</label>
-                <input type="text" class="form-control" id="assigned-to">
+                <input type="text" class="form-control" id="assigned-to" name="assigned-to">
             </div>
 
             <div class="mb-3">
