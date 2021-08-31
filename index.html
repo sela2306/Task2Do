@@ -31,14 +31,13 @@
     </header>
     <main>
       <!-- new task button -->
-      <!-- filter dropdown box with to do, in progress, review and done options -->
-    <!-- Sumitha start button -->
     <section id="newTaskButton" class="container d-flex justify-content-between">
     <div class="d-grid col-2 text-nowrap">
       <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         New Task
         </button>
     </div>
+    <!-- filter by status dropdown -->
     <div >
     <label for="filter-by-status" class="col-form-label">Filter by Status</label>
                   <div class="dropdown">
@@ -52,13 +51,13 @@
               </div>
     
   </section>
-    <!-- end button -->
+    
       <section id="task-cards">
         <article class="container mt-5 ">
           <!-- cards here - created a div to make cards responsive -->
           <div class="row ">
             <!-- card 1 -->
-            <div class="col-sm-8 col-md-4 my-3">
+            <div class="col-sm-8 col-md-4 col-lg-3 my-3">
               <!-- paste bootstrap card here -->
               <div class="card border-success mb-3" >
                 <div class="card-header bg-transparent border-success">
@@ -88,7 +87,7 @@
               </div> 
             </div>
 
-            <div class="col-sm-8 col-md-4 my-3">
+            <div class="col-sm-8 col-md-4 col-lg-3 my-3">
               <!-- card 2 -->
               <div class="card border-success mb-3" >
                 <div class="card-header bg-transparent border-success">
@@ -119,7 +118,7 @@
 
 
 
-              <div class="col-sm-8 col-md-4 my-3">
+              <div class="col-sm-8 col-md-4 col-lg-3 my-3">
                 <!-- card 3 -->
                 <div class="card border-success mb-3" >
                   <div class="card-header bg-transparent border-success">
@@ -149,7 +148,7 @@
                 </div>
 
 
-              <div class="col-sm-8 col-md-4 my-3">
+              <div class="col-sm-8 col-md-4 col-lg-3 my-3">
               <!-- Card 4 -->
               <div class="card border-success mb-3" >
                 <div class="card-header bg-transparent border-success">
@@ -177,7 +176,7 @@
                 </div>
               </div></div>
 
-              <div class="col-sm-8 col-md-4 my-3">
+              <div class="col-sm-8 col-md-4 col-lg-3 my-3">
               <!-- card 5 -->
               <div class="card border-success mb-3" >
                 <div class="card-header bg-transparent border-success">
@@ -247,7 +246,7 @@
             <div class="mb-3">
                 <label for="status" class="col-form-label">Status</label>
                 <div class="dropdown">
-                     <select name="status" id="status">
+                     <select name="status" class="form-control" id="status">
                         <option value="to-do">To-Do</option>
                         <option value="in-progress">In Progress</option>
                         <option value="review">Review</option>
@@ -259,14 +258,14 @@
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary">Add Task</button>
         <input type="reset" class="btn btn-secondary" value="Reset">
-        <!-- <button type="button" class="btn btn-primary">Clear Form</button> -->
+        
         </form>
         
     </div>
   </div>
 </div>
 </div>
-<!-- Sumitha end modal -->
+<!--End modal -->
     </main>
     <!-- start footer -->
     <footer class="p-3 mt-5 container-fluid bg-light  ">
@@ -274,7 +273,6 @@
         <div class="align-self-center">@ Copyright Generation Australia, 2021 </div>
         <div>Designed by Sumitha and Tara</div>
       </div>
-
 
     </footer>
     
