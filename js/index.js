@@ -87,9 +87,16 @@ function validFormFieldInput(event) {
     inValidFeedback5.innerText = "";
   }
 if (isValidCount === 0) {
-  newTaskManager.addTask(newTaskNameVal, newTaskDescriptionVal, newTaskAssignedToVal, newTaskDateVal, newTaskStatusVal);
+//  formatting date dd/mm/yyyy
+  const formattedDate = newTaskDateVal.split('-');
+  let newDate = `${formattedDate[2]}/${formattedDate[1]}/${formattedDate[0]}`;
+  
+  newTaskManager.addTask(newTaskNameVal, newTaskDescriptionVal, newTaskAssignedToVal, newDate, newTaskStatusVal);
   console.log(newTaskManager.tasks);
   resetFormFieldInput();
+  const taskHtml = newTaskManager.createTaskHtml(newTaskNameVal, newTaskDescriptionVal, newTaskAssignedToVal, newDate, newTaskStatusVal);
+  newTaskManager.render();
+  console.log(taskHtml);
   } else {
     isValidCount = 0;
   }
