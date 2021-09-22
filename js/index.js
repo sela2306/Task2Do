@@ -1,10 +1,13 @@
-const btnNewTaskAdd = document.querySelector("#btnNewTaskAdd");
+// Initialize TaskManager class
+const newTaskManager = new TaskManager();
+
 const newTaskName = document.querySelector("#newTask-name");
 const newTaskDescription = document.querySelector("#newTask-description");
 const newTaskAssignedTo = document.querySelector("#newTask-assigned-to");
 const newTaskDate = document.querySelector("#newTask-date");
 const newTaskStatus = document.querySelector("#newTask-status");
 
+const btnNewTaskAdd = document.querySelector("#btnNewTaskAdd");
 const btnMainAddNewTask = document.querySelector("#btnMainAddNewTask");
 const btnNewTaskReset = document.querySelector("#btnNewTaskReset");
 
@@ -16,7 +19,7 @@ let inValidFeedback4 = document.querySelector(".in-valid-feedback4");
 let inValidFeedback5 = document.querySelector(".in-valid-feedback5");
 let isValidCount = 0;
 
-function validFormFieldInput() {
+function validFormFieldInput(event) {
   let newTaskNameVal = newTaskName.value;
   let newTaskDescriptionVal = newTaskDescription.value;
   let newTaskAssignedToVal = newTaskAssignedTo.value;
@@ -28,6 +31,9 @@ function validFormFieldInput() {
   console.log(`new task assigned-to - ${newTaskAssignedToVal}`);
   console.log(`new task date - ${newTaskDateVal}`);
   console.log(`new task status - ${newTaskStatusVal}`);
+
+
+  event.preventDefault();
 
   //let newTaskDescriptionVal
 
@@ -80,9 +86,31 @@ function validFormFieldInput() {
   } else {
     inValidFeedback5.innerText = "";
   }
+if (isValidCount === 0) {
+//  formatting date dd/mm/yyyy
+  const formattedDate = newTaskDateVal.split('-');
+  let newDate = `${formattedDate[2]}/${formattedDate[1]}/${formattedDate[0]}`;
+  
+  newTaskManager.addTask(newTaskNameVal, newTaskDescriptionVal, newTaskAssignedToVal, newDate, newTaskStatusVal);
+  console.log(newTaskManager.tasks);
+  resetFormFieldInput();
+  const taskHtml = newTaskManager.createTaskHtml(newTaskNameVal, newTaskDescriptionVal, newTaskAssignedToVal, newDate, newTaskStatusVal);
+  newTaskManager.render();
+  console.log(taskHtml);
+  } else {
+    isValidCount = 0;
+  }
+
+
 }
 
 function resetFormFieldInput() {
+  isValidCount = 0;
+  newTaskName.value = "";
+  newTaskDescription.value = "";
+  newTaskAssignedTo.value ="";
+  newTaskDate.value = "";
+  newTaskStatus.value ="";
   inValidFeedback1.innerText = "";
   inValidFeedback2.innerText = "";
   inValidFeedback3.innerText = "";
@@ -90,5 +118,6 @@ function resetFormFieldInput() {
   inValidFeedback5.innerText = "";
 }
 
-btnNewTaskAdd.addEventListener("click", validFormFieldInput);
+btnNewTaskAdd.addEventListener("click", event => validFormFieldInput(event));
 btnNewTaskReset.addEventListener("click", resetFormFieldInput);
+
