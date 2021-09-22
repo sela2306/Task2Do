@@ -1,17 +1,17 @@
 // Initialize TaskManager class
 const newTaskManager = new TaskManager();
-
+// task form elements
 const newTaskName = document.querySelector("#newTask-name");
 const newTaskDescription = document.querySelector("#newTask-description");
 const newTaskAssignedTo = document.querySelector("#newTask-assigned-to");
 const newTaskDate = document.querySelector("#newTask-date");
 const newTaskStatus = document.querySelector("#newTask-status");
-
+// button elements
 const btnNewTaskAdd = document.querySelector("#btnNewTaskAdd");
 const btnMainAddNewTask = document.querySelector("#btnMainAddNewTask");
 const btnNewTaskReset = document.querySelector("#btnNewTaskReset");
 
-// field validation span element
+// field validation span elements
 let inValidFeedback1 = document.querySelector(".in-valid-feedback1");
 let inValidFeedback2 = document.querySelector(".in-valid-feedback2");
 let inValidFeedback3 = document.querySelector(".in-valid-feedback3");
@@ -35,7 +35,6 @@ function validFormFieldInput(event) {
 
   event.preventDefault();
 
-  //let newTaskDescriptionVal
 
   // validate task name field
   if (newTaskNameVal.length <= 5) {
