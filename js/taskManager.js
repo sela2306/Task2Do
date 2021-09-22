@@ -16,10 +16,23 @@ class TaskManager {
         };
         
        
-        this.tasks.push({task});
+        this.tasks.push(task);
+        
     }        
 
     createTaskHtml(name, description, assignedTo, dueDate, status) {
+      // status array
+     let arrStatus = ["To-do","In-progress","Review","Done"];  
+     // status image array
+     let arrStatusImage = ["./images/todo.png","./images/inprogress.png","./images/review.png","./images/done.png"];
+     // find status-image based on the index  of currunt status 
+     let imgStatus = arrStatusImage[arrStatus.indexOf(status)];
+     // add/remove 'done' button html on the tasks 
+     let doneButton = "";
+     if (status==="Done") doneButton = "";
+      else 
+      doneButton = `<button class="btn btn-sm btn-primary " type="button">Done</button>`;
+     
         
         const html = `
         <!-- Task begin -->
@@ -28,8 +41,8 @@ class TaskManager {
           <div class="card-header bg-transparent border-success">
               <div class="d-flex justify-content-between">
                   <div class="align-self-center"
-                  <h5>${name}</h5><p id="status" class="text-muted fst-italic">In progress</p></div>
-                  <div><img src="./images/inprogress.png"></div>
+                  <h5>${name}</h5><p id="status" class="text-muted fst-italic">${status}</p></div>
+                  <div><img src="${imgStatus}"></div>
                 </div>
             
           </div>
@@ -38,13 +51,13 @@ class TaskManager {
             <p class="card-text">
               ${description}
             </p>
-            <h6 class="card-title">${status}: ${dueDate}</h6>
+            <h6 class="card-title">Due: ${dueDate}</h6>
             <p>${assignedTo}</p>
           </div>
           <div class="card-footer bg-transparent border-success">
             <div class="d-flex justify-content-end gap-2">
-              <button class="btn btn-primary " type="button">Edit</button>
-              <button class="btn btn-primary" type="button">
+              ${doneButton}
+              <button class="btn btn-sm btn-primary" type="button">
                 Delete
               </button>
             </div>
@@ -57,13 +70,13 @@ class TaskManager {
 
     render() {
         const tasksHtmlList = [];
-        
+               
 
         for(let i=0; i < this.tasks.length; i++) 
         {
             
             let temp = this.tasks[i];   
-            console.log(`Checking...${this.tasks[i]}`);
+            console.log(temp["name"]);
             let taskHtml = this.createTaskHtml(temp.name, temp.description, temp.assignedTo, temp.dueDate, temp.status);
             tasksHtmlList.push(taskHtml);
         }
