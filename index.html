@@ -216,48 +216,54 @@
     <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Add New Task</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="btnMainAddNewTask">Add New Task</h5>
+        <button type="button" id="btnMainAddNewTask" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           
         <!-- Modal Body -->
-        <form>
+        <form id="newTaskForm">
             <div class="mb-3">
-              <label for="task-name" class="col-form-label">Task Name</label>
-              <input type="text" class="form-control" id="task-name" name="task-name">
+              <label for="newTask-name" class="col-form-label">Task Name</label>
+              <input type="text" class="form-control" id="newTask-name" name="newTask-name">
+              <span class="in-valid-feedback1"></span>
             </div>
 
             <div class="mb-3">
-              <label for="description" class="col-form-label">Description</label>
-              <textarea class="form-control" id="description" name="description"></textarea>
+              <label for="newTask-description" class="col-form-label">Description</label>
+              <textarea class="form-control" id="newTask-description" name="newTask-description"></textarea>
+              <span class="in-valid-feedback2"></span>
             </div>
 
             <div class="mb-3">
-                <label for="assigned-to" class="col-form-label">Assigned To</label>
-                <input type="text" class="form-control" id="assigned-to" name="assigned-to">
+                <label for="newTask-assigned-to" class="col-form-label">Assigned To</label>
+                <input type="text" class="form-control" id="newTask-assigned-to" name="newTask-assigned-to">
+                <span class="in-valid-feedback3"></span>
             </div>
 
             <div class="mb-3">
-                <label for="date" class="col-form-label">Date</label>
-                <input type="date" class="form-control" id="date" name="date">
+                <label for="newTask-date" class="col-form-label">Date</label>
+                <input type="date" class="form-control" id="newTask-date" name="newTask-date">
+                <span class="in-valid-feedback4"></span>
             </div>
 
             <div class="mb-3">
-                <label for="status" class="col-form-label">Status</label>
+                <label for="newTask-status" class="col-form-label">Status</label>
                 <div class="dropdown">
-                     <select name="status" class="form-control" id="status">
+                     <select name="newTask-status" class="form-control" id="newTask-status">
+                      <option value=""></option>
                         <option value="to-do">To-Do</option>
                         <option value="in-progress">In Progress</option>
                         <option value="review">Review</option>
                         <option value="done">Done</option>
                       </select>
                 </div>
+                <span class="in-valid-feedback5"></span>
             </div>
                             
         <div class="modal-footer">
-        <button type="button" class="btn btn-secondary">Add Task</button>
-        <input type="reset" class="btn btn-secondary" value="Reset">
+        <button type="button" class="btn btn-secondary" id="btnNewTaskAdd">Add Task</button>
+        <input type="reset" class="btn btn-secondary" id="btnNewTaskReset" value="Reset">
         
         </form>
         
@@ -278,6 +284,6 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
+    <script src="js/index.js"></script>
   </body>
 </html>
