@@ -15,7 +15,7 @@ section {
        
    }
    
-   .titleDiv {
+   .header-titleDiv {
        top: 15%;
        bottom: 5%;
        right: 25%;
@@ -26,20 +26,36 @@ section {
        
    }
 
+   h5 {
+    color: #fd7e14;
+}
 
+.header-logoFont {
+font-family: 'Dancing Script', cursive;
+font-size: 6vw;
+color: white;
+}
+/* end header */
 
    
    .myBtnColor {
        /* background-color:rgb(220,193,193) ; */
        /* background-color: rgb(198,82,117); */
        /* background-color: rgb(224,160,181); */
-       background-color: rgb(91,111,110); 
-       color: white; 
+       /* Sunitha */
+       /* background-color: rgb(91,111,110); */
+       color: white;  
+/* added by tara */
+       background-color: rgb(140,43,94);
+       
              
    }
    .myBtnColor:hover{
        color: rgb(245, 243, 243);
        background-color:rgb(60, 73, 72) ;
+
+       background-color: rgb(96,25,72);
+       
    }
    .modalBtnColor{
        border-color:rgb(91,111,110) ;
@@ -55,12 +71,14 @@ section {
     border-radius: 10px;
     color: black;
 }
-.logo-img {
-    width: 50px;
-    height: auto;
-}
+
 
 .cardHeadColor {
-    color: #fd7e14;
+    color: rgb(219, 72, 170);
+}
+
+.bi {
+    font-size: 2rem;
+    color: blue;
 }
 

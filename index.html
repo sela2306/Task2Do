@@ -27,39 +27,43 @@
               <div class="position-relative">
                 <div> 
                 <img class="header-img"
-                        src="./images/blueheader1.jpg"
+                        src="./images/blueheader.jpg"
                 alt="task planner"/></div>
-        <div class="text-center d-flex justify-content-center align-items-center position-absolute titleDiv ">
+        <div class="text-center d-flex justify-content-center align-items-center position-absolute header-titleDiv ">
         
           <img
             class="logo-img"
-            src="./images/logoTick.png"
+            src="./images/logo.png"
             alt="task planner"
-          /><span class="logoFont">Task2Do</span>
+          /><span class="header-logoFont">Task2Do</span>
         </div>
       </div>
     </header>
     <!-- header chagned: Tara :end -->
-    <main>
+    <main class="container p-5">
       <!-- new task button -->
-    <section id="newTaskButton" class="container d-flex justify-content-between">
-    <div class="d-grid col-2 text-nowrap">
+    <section class="  row    bg-light p-3">
+      
+    <div class=" col-9 pb-1">
+      <h1>Quick easy task organizer</h1>
       <button type="button" class="btn myBtnColor" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        New Task
+        
+        Click here to add new task
         </button>
     </div>
     <!-- filter by status dropdown -->
-    <div >
-    <label for="filter-by-status" class="col-form-label">Filter by Status</label>
-                  <div class="dropdown">
-                     <select name="filter-by-status" id="filter-by-status">
+    
+          <!-- <label for="filter-by-status" class="col-form-label">Filter by Status</label> -->
+                  <div class=" col-sm-3 col-md-3">
+                     <select class="form-select" name="filter-by-status" id="filter-by-status">
+                      <option selected>Filter by</option>
                         <option value="to-do">To-Do</option>
                         <option value="in-progress">In Progress</option>
                         <option value="review">Review</option>
                         <option value="done">Done</option>
                       </select>
                 </div>
-              </div>
+              
     
   </section>
     
