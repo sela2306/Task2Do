@@ -4,16 +4,42 @@ section {
   }
 
   .header-img {
-    background-image: url("./images/sand-header.jpg");
-    background-color: #cccccc;
+     background-color: rgb(125, 100, 148);
+    
    }
-
+   
+   .myBtnColor {
+       /* background-color:rgb(220,193,193) ; */
+       /* background-color: rgb(198,82,117); */
+       /* background-color: rgb(224,160,181); */
+       background-color: rgb(91,111,110); 
+       color: white; 
+             
+   }
+   .myBtnColor:hover{
+       color: rgb(245, 243, 243);
+       background-color:rgb(60, 73, 72) ;
+   }
+   .modalBtnColor{
+       border-color:rgb(91,111,110) ;
+   }
+   .modalBtnColor:hover{
+       background-color: rgb(186, 209, 208);
+   }
+.fontSize{
+    font-size: x-small;
+}
+.card{
+    border-color: rgb(60, 73, 72);
+    border-radius: 10px;
+    color: black;
+}
 .logo-img {
     width: 50px;
     height: auto;
 }
 
-h5 {
+.cardHeadColor {
     color: #fd7e14;
 }
 

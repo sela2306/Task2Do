@@ -7,8 +7,8 @@ const newTaskAssignedTo = document.querySelector("#newTask-assigned-to");
 const newTaskDate = document.querySelector("#newTask-date");
 const newTaskStatus = document.querySelector("#newTask-status");
 // button elements
-const btnNewTaskAdd = document.querySelector("#btnNewTaskAdd");
 const btnMainAddNewTask = document.querySelector("#btnMainAddNewTask");
+const btnNewTaskAdd = document.querySelector("#btnNewTaskAdd");
 const btnNewTaskReset = document.querySelector("#btnNewTaskReset");
 
 // field validation span elements
@@ -96,11 +96,14 @@ if (isValidCount === 0) {
   const taskHtml = newTaskManager.createTaskHtml(newTaskNameVal, newTaskDescriptionVal, newTaskAssignedToVal, newDate, newTaskStatusVal);
   newTaskManager.render();
   console.log(taskHtml);
+  // let staticBackdrop = document.querySelector("#staticBackdrop");
+  // staticBackdrop.remove();
+  
   } else {
     isValidCount = 0;
   }
-
-
+ 
+  
 }
 
 function resetFormFieldInput() {
@@ -118,5 +121,6 @@ function resetFormFieldInput() {
 }
 
 btnNewTaskAdd.addEventListener("click", event => validFormFieldInput(event));
+
 btnNewTaskReset.addEventListener("click", resetFormFieldInput);
 
