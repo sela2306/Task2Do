@@ -17,7 +17,6 @@ class TaskManager {
         
        
         this.tasks.push(task);
-        
     }        
 
     createTaskHtml(name, description, assignedTo, dueDate, status) {
