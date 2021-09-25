@@ -8,11 +8,9 @@ section {
      width: 100%;
      max-height: 70vh;
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
    }
    .logo-img {
     max-width: 6vw;
-       
    }
    
    .header-titleDiv {
@@ -23,7 +21,6 @@ section {
        width: 50%;
        height: 60%;
        background: rgba(4, 27, 29, 0.281);
-       
    }
 
    h5 {
@@ -65,6 +62,8 @@ color: white;
    }
 .fontSize{
     font-size: x-small;
+    border: 1px solid white;
+
 }
 .card{
     border-color: rgb(60, 73, 72);
@@ -79,6 +78,6 @@ color: white;
 
 .bi {
     font-size: 2rem;
-    color: blue;
+    color: peachpuff;
 }
 

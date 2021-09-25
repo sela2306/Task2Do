@@ -45,7 +45,7 @@
     <section class="  row    bg-light p-3">
       
     <div class=" col-9 pb-1">
-      <h1>Quick easy task organizer</h1>
+      <h1 pt-1 >Quick easy task organizer</h1>
       <button type="button" class="btn myBtnColor" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         
         Click here to add new task
@@ -88,35 +88,35 @@
           
         <!-- Modal Body -->
         <form class="row g-2" id="newTaskForm">
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12 ">
               <label for="newTask-name" class="col-form-label">Task Name</label>
               <input type="text" class="form-control" id="newTask-name" name="newTask-name">
-              <span class="in-valid-feedback1 fontSize"></span>
+              <span class="in-valid-feedback1 fontSize form-text">Enter more than 5 characters</span>
             </div>
 
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12 ">
               <label for="newTask-description" class="col-form-label">Description</label>
               <textarea class="form-control" id="newTask-description" name="newTask-description"></textarea>
-              <span class="in-valid-feedback2 fontSize"></span>
+              <span class="in-valid-feedback2 fontSize form-text">Enter more than 5 characters</span>
             </div>
 
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12 ">
                 <label for="newTask-assigned-to" class="col-form-label">Assigned To</label>
                 <input type="text" class="form-control" id="newTask-assigned-to" name="newTask-assigned-to">
-                <span class="in-valid-feedback3 fontSize"></span>
+                <span class="in-valid-feedback3 fontSize form-text">Enter more than 5 characters</span>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 ">
                 <label for="newTask-date" class="col-form-label">Date</label>
                 <input type="date" class="form-control" id="newTask-date" name="newTask-date">
-                <span class="in-valid-feedback4 fontSize"></span>
+                <span class="in-valid-feedback4 fontSize form-text"></span>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 ">
                 <label for="newTask-status" class="col-form-label">Status</label>
                 <div class="dropdown">
-                     <select name="newTask-status" class="form-control" id="newTask-status">
-                      <option value=""></option>
+                     <select name="newTask-status" class="form-select" id="newTask-status">
+                      <option value="" selected>Select status</option>
                         <option value="To-do">To-Do</option>
                         <option value="In-progress">In Progress</option>
                         <option value="Review">Review</option>
