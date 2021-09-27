@@ -1,83 +1,75 @@
 section {
-    margin-top: 60px;
- 
-  }
+  margin-top: 60px;
+}
 /* header images and text CSS */
-  .header-img {
-     /* background-color: rgb(125, 100, 148); */
-     width: 100%;
-     max-height: 70vh;
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-   }
-   .logo-img {
-    max-width: 6vw;
-   }
-   
-   .header-titleDiv {
-       top: 15%;
-       bottom: 5%;
-       right: 25%;
-       left: 25%;
-       width: 50%;
-       height: 60%;
-       background: rgba(4, 27, 29, 0.281);
-   }
+.header-img {
+  /* background-color: rgb(125, 100, 148); */
+  width: 100%;
+  max-height: 70vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.logo-img {
+  max-width: 6vw;
+}
 
-   h5 {
-    color: #fd7e14;
+.header-titleDiv {
+  top: 15%;
+  bottom: 5%;
+  right: 25%;
+  left: 25%;
+  width: 50%;
+  height: 60%;
+  background: rgba(4, 27, 29, 0.281);
+}
+
+h5 {
+  color: #fd7e14;
 }
 
 .header-logoFont {
-font-family: 'Dancing Script', cursive;
-font-size: 6vw;
-color: white;
+  font-family: "Dancing Script", cursive;
+  font-size: 6vw;
+  color: white;
 }
 /* end header */
 
-   
-   .myBtnColor {
-       /* background-color:rgb(220,193,193) ; */
-       /* background-color: rgb(198,82,117); */
-       /* background-color: rgb(224,160,181); */
-       /* Sunitha */
-       /* background-color: rgb(91,111,110); */
-       color: white;  
-/* added by tara */
-       background-color: rgb(140,43,94);
-       
-             
-   }
-   .myBtnColor:hover{
-       color: rgb(245, 243, 243);
-       background-color:rgb(60, 73, 72) ;
-
-       background-color: rgb(96,25,72);
-       
-   }
-   .modalBtnColor{
-       border-color:rgb(91,111,110) ;
-   }
-   .modalBtnColor:hover{
-       background-color: rgb(186, 209, 208);
-   }
-.fontSize{
-    font-size: x-small;
-    border: 1px solid white;
-
+.myBtnColor {
+  /* background-color:rgb(220,193,193) ; */
+  /* background-color: rgb(198,82,117); */
+  /* background-color: rgb(224,160,181); */
+  /* Sunitha */
+  /* background-color: rgb(91,111,110); */
+  color: white;
+  /* added by tara */
+  background-color: rgb(140, 43, 94);
 }
-.card{
-    border-color: rgb(60, 73, 72);
-    border-radius: 10px;
-    color: black;
-}
+.myBtnColor:hover {
+  color: rgb(245, 243, 243);
+  background-color: rgb(60, 73, 72);
 
+  background-color: rgb(96, 25, 72);
+}
+.modalBtnColor {
+  border-color: rgb(91, 111, 110);
+}
+.modalBtnColor:hover {
+  background-color: rgb(186, 209, 208);
+}
+.fontSize {
+  font-size: x-small;
+  border: 1px solid white;
+}
+.card {
+  border-color: rgb(60, 73, 72);
+  border-radius: 10px;
+  color: black;
+}
 
 .cardHeadColor {
-    color: rgb(219, 72, 170);
+  color: rgb(219, 72, 170);
 }
 
 .bi {
-    font-size: 2rem;
-    color: peachpuff;
+  font-size: 2rem;
+  color: blue;
 }
-

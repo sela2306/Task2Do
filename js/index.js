@@ -18,7 +18,6 @@ let inValidFeedback3 = document.querySelector(".in-valid-feedback3");
 let inValidFeedback4 = document.querySelector(".in-valid-feedback4");
 let inValidFeedback5 = document.querySelector(".in-valid-feedback5");
 
-
 let isValidCount = 0;
 
 // validate input fields
@@ -74,7 +73,7 @@ function feedback(event, inputType, feedbackType) {
   }
 }
 
-// function to validate form fields and render task 
+// function to validate form fields and render task
 function validFormFieldInput(event) {
   let newTaskNameVal = newTaskName.value;
   let newTaskDescriptionVal = newTaskDescription.value;
@@ -126,7 +125,6 @@ function validFormFieldInput(event) {
 
 // reset all form input fields
 function resetFormFieldInput() {
-
   isValidCount = 0;
   newTaskName.value = "";
   newTaskDescription.value = "";
@@ -155,25 +153,3 @@ myModal.addEventListener("hidden.bs.modal", function (event) {
   // clear form
   resetFormFieldInput();
 });
-
-//--------------------------------
-// eventlistner for dynamic validation of form elements as soon as focus is out of the field
-newTaskName.addEventListener("focusout", (event) => {
-  validateInput(event.target, inValidFeedback1, "text");
-});
-newTaskDescription.addEventListener("focusout", (event) => {
-  validateInput(event.target, inValidFeedback2, "text");
-});
-
-newTaskAssignedTo.addEventListener("focusout", (event) => {
-  validateInput(event.target, inValidFeedback3, "text");
-});
-
-newTaskDate.addEventListener("focusout", (event) => {
-  validateInput(event.target, inValidFeedback4, "date");
-});
-
-newTaskStatus.addEventListener("focusout", (event) => {
-  validateInput(event.target, inValidFeedback5, "status");
-});
-//------------------------------------------------
