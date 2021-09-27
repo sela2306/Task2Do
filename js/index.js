@@ -43,25 +43,26 @@ function validateInput(event, feedbackEvent, inputType) {
         let nowYear = d.getFullYear();
         let nowDate = d.getDate();
         let nowMonth = d.getMonth() + 1;
-        let inValid = true;
+        let inValidDate = false;
+
         if (userDate.getFullYear() < nowYear) {
-          inValid = true;
+          inValidDate = false;
           console.log("invalid year");
         } else if (userMonth < nowMonth) {
-          inValid = true;
+          inValidDate = false;
         } else if (userMonth === nowMonth && userDate.getDate() < nowDate) {
           console.log("invalid date");
-          inValid = true;
+          inValidDate = false;
         } else {
           console.log("valid everything");
-          inValid = false;
+          inValidDate = true;
         }
 
-        if (inValid) {
+        if (inValidDate) {
+          feedback(feedbackEvent, inputType, "valid");
+        } else {
           feedback(feedbackEvent, inputType, "invalid");
           isValidCount++;
-        } else {
-          feedback(feedbackEvent, inputType, "valid");
         }
       }
       break;
@@ -130,6 +131,7 @@ function validFormFieldInput(event) {
     const formattedDate = newTaskDateVal.split("-");
     let newDate = `${formattedDate[2]}/${formattedDate[1]}/${formattedDate[0]}`;
 
+    // add task to the array
     newTaskManager.addTask(
       newTaskNameVal,
       newTaskDescriptionVal,
@@ -138,7 +140,9 @@ function validFormFieldInput(event) {
       newTaskStatusVal
     );
     console.log(newTaskManager.tasks);
+    // reset form to make ready for next task input
     resetFormFieldInput();
+    // create the html for diplaying the tasks
     const taskHtml = newTaskManager.createTaskHtml(
       newTaskNameVal,
       newTaskDescriptionVal,
@@ -161,6 +165,7 @@ function resetFormFieldInput() {
   newTaskAssignedTo.value = "";
   newTaskDate.value = "";
   newTaskStatus.value = "";
+
   resetFeedbackSpan(inValidFeedback1, "Enter more than 5 characters");
   resetFeedbackSpan(inValidFeedback2, "Enter more than 5 characters");
   resetFeedbackSpan(inValidFeedback3, "Enter more than 5 characters");
