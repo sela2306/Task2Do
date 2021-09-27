@@ -12,38 +12,58 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- google fonts stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<!-- custome CSS -->
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Task2Do</title>
   </head>
   <body>
-    <header>
+    <!-- header chagned: Tara : start -->
+    <header >
       
-      <div class="header-img p-3 mb-2 text-white">
-        <div class="text-center">
-        <h1>Task2Do</h1>      
+              <div class="position-relative">
+                <div> 
+                <img class="header-img"
+                        src="./images/blueheader.jpg"
+                alt="task planner"/></div>
+        <div class="text-center d-flex justify-content-center align-items-center position-absolute header-titleDiv ">
+        
+          <img
+            class="logo-img"
+            src="./images/logo.png"
+            alt="task planner"
+          /><span class="header-logoFont">Task2Do</span>
         </div>
       </div>
     </header>
-    <main>
+    <!-- header chagned: Tara :end -->
+    <main class="container p-5">
       <!-- new task button -->
-    <section id="newTaskButton" class="container d-flex justify-content-between">
-    <div class="d-grid col-2 text-nowrap">
+    <section class="  row    bg-light p-3">
+      
+    <div class=" col-9 pb-1">
+      <h1 pt-1 >Quick easy task organizer</h1>
       <button type="button" class="btn myBtnColor" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        New Task
+        
+        Click here to add new task
         </button>
     </div>
     <!-- filter by status dropdown -->
-    <div >
-    <label for="filter-by-status" class="col-form-label">Filter by Status</label>
-                  <div class="dropdown">
-                     <select name="filter-by-status" id="filter-by-status">
+    
+          <!-- <label for="filter-by-status" class="col-form-label">Filter by Status</label> -->
+                  <div class=" col-sm-3 col-md-3">
+                     <select class="form-select" name="filter-by-status" id="filter-by-status">
+                      <option selected>Filter by</option>
                         <option value="to-do">To-Do</option>
                         <option value="in-progress">In Progress</option>
                         <option value="review">Review</option>
                         <option value="done">Done</option>
                       </select>
                 </div>
-              </div>
+              
     
   </section>
     
@@ -57,7 +77,7 @@
       </section>
       <!-- End card -->
       <!-- Start Modal -->
-   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+   <div class="modal fade" id="staticBackdrop"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
@@ -68,35 +88,35 @@
           
         <!-- Modal Body -->
         <form class="row g-2" id="newTaskForm">
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12 ">
               <label for="newTask-name" class="col-form-label">Task Name</label>
               <input type="text" class="form-control" id="newTask-name" name="newTask-name">
-              <span class="in-valid-feedback1 fontSize"></span>
+              <span class="in-valid-feedback1 fontSize form-text">Enter more than 5 characters</span>
             </div>
 
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12 ">
               <label for="newTask-description" class="col-form-label">Description</label>
               <textarea class="form-control" id="newTask-description" name="newTask-description"></textarea>
-              <span class="in-valid-feedback2 fontSize"></span>
+              <span class="in-valid-feedback2 fontSize form-text">Enter more than 5 characters</span>
             </div>
 
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12 ">
                 <label for="newTask-assigned-to" class="col-form-label">Assigned To</label>
                 <input type="text" class="form-control" id="newTask-assigned-to" name="newTask-assigned-to">
-                <span class="in-valid-feedback3 fontSize"></span>
+                <span class="in-valid-feedback3 fontSize form-text">Enter more than 5 characters</span>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 ">
                 <label for="newTask-date" class="col-form-label">Date</label>
                 <input type="date" class="form-control" id="newTask-date" name="newTask-date">
-                <span class="in-valid-feedback4 fontSize"></span>
+                <span class="in-valid-feedback4 fontSize form-text"></span>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 ">
                 <label for="newTask-status" class="col-form-label">Status</label>
                 <div class="dropdown">
-                     <select name="newTask-status" class="form-control" id="newTask-status">
-                      <option value=""></option>
+                     <select name="newTask-status" class="form-select" id="newTask-status">
+                      <option value="" selected>Select status</option>
                         <option value="To-do">To-Do</option>
                         <option value="In-progress">In Progress</option>
                         <option value="Review">Review</option>
