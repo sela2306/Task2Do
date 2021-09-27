@@ -35,6 +35,36 @@ function validateInput(event, feedbackEvent, inputType) {
       }
       break;
     case "date":
+      {
+        let userDate = new Date(event.value);
+        // get current date
+        const d = new Date();
+        let userMonth = userDate.getMonth() + 1;
+        let nowYear = d.getFullYear();
+        let nowDate = d.getDate();
+        let nowMonth = d.getMonth() + 1;
+        let inValid = true;
+        if (userDate.getFullYear() < nowYear) {
+          inValid = true;
+          console.log("invalid year");
+        } else if (userMonth < nowMonth) {
+          inValid = true;
+        } else if (userMonth === nowMonth && userDate.getDate() < nowDate) {
+          console.log("invalid date");
+          inValid = true;
+        } else {
+          console.log("valid everything");
+          inValid = false;
+        }
+
+        if (inValid) {
+          feedback(feedbackEvent, inputType, "invalid");
+          isValidCount++;
+        } else {
+          feedback(feedbackEvent, inputType, "valid");
+        }
+      }
+      break;
     case "status":
       {
         if (event.value === "") {
