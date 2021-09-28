@@ -45,7 +45,8 @@ function validateInput(event, feedbackEvent, inputType) {
         let nowMonth = d.getMonth() + 1;
         let inValidDate = false;
 
-        if (userDate.getFullYear() < nowYear) {
+        if (event.value === "") inValidDate = false;
+        else if (userDate.getFullYear() < nowYear) {
           inValidDate = false;
           console.log("invalid year");
         } else if (userMonth < nowMonth) {
@@ -106,12 +107,14 @@ function feedback(event, inputType, feedbackType) {
 
 // function to validate form fields and render task
 function validFormFieldInput(event) {
+  // get all form values
   let newTaskNameVal = newTaskName.value;
   let newTaskDescriptionVal = newTaskDescription.value;
   let newTaskAssignedToVal = newTaskAssignedTo.value;
   let newTaskDateVal = newTaskDate.value;
   let newTaskStatusVal = newTaskStatus.value;
 
+  // log all form values to console
   console.log(`new task name - ${newTaskNameVal}`);
   console.log(`new task description - ${newTaskDescriptionVal}`);
   console.log(`new task assigned-to - ${newTaskAssignedToVal}`);
@@ -120,12 +123,14 @@ function validFormFieldInput(event) {
 
   event.preventDefault();
 
+  // call functions to validate all the form fields
   validateInput(newTaskName, inValidFeedback1, "text");
   validateInput(newTaskDescription, inValidFeedback2, "text");
   validateInput(newTaskAssignedTo, inValidFeedback3, "text");
   validateInput(newTaskDate, inValidFeedback4, "date");
   validateInput(newTaskStatus, inValidFeedback5, "status");
 
+  // if all fields are valid:
   if (isValidCount === 0) {
     //  formatting date dd/mm/yyyyHTML
     const formattedDate = newTaskDateVal.split("-");
@@ -153,19 +158,20 @@ function validFormFieldInput(event) {
     newTaskManager.render();
     console.log(taskHtml);
   } else {
-    isValidCount = 0;
+    isValidCount = 0; // reset count if any field is invalid
   }
 }
 
 // reset all form input fields
 function resetFormFieldInput() {
+  // reset form values
   isValidCount = 0;
   newTaskName.value = "";
   newTaskDescription.value = "";
   newTaskAssignedTo.value = "";
   newTaskDate.value = "";
   newTaskStatus.value = "";
-
+  // reset feedback text and color
   resetFeedbackSpan(inValidFeedback1, "Enter more than 5 characters");
   resetFeedbackSpan(inValidFeedback2, "Enter more than 5 characters");
   resetFeedbackSpan(inValidFeedback3, "Enter more than 5 characters");
@@ -187,4 +193,27 @@ var myModal = document.getElementById("staticBackdrop");
 myModal.addEventListener("hidden.bs.modal", function (event) {
   // clear form
   resetFormFieldInput();
+});
+
+// add done button function
+const cardList = document.querySelector("#cardList");
+cardList.addEventListener("click", (event) => {
+  // "event" here is the event parameter
+  if (event.target.classList.contains("doneButton")) {
+    // get button id
+
+    btnId = event.target.id;
+    console.log(btnId);
+
+    // get task array id from button id
+    let taskId = btnId.split("-");
+    console.log(taskId);
+
+    // find the task the task array
+    // change In-Progress / Review / To-do to Done
+    newTaskManager.updateTaskToDone(Number(taskId[1]));
+
+    // render the updated html
+    newTaskManager.render();
+  }
 });
