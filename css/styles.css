@@ -61,7 +61,7 @@ h5 {
 }
 .card {
   border-color: rgb(60, 73, 72);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   color: black;
 }
 
@@ -71,5 +71,27 @@ h5 {
 
 .bi {
   font-size: 2rem;
-  color: blue;
+  color: rgb(70, 69, 69);
+}
+
+/* .card {
+  border-top-left-radius: 20%;
+  border-top-right-radius: 45%;
+} */
+/* colours for each task type */
+.todoClr {
+  /* color: white; */
+  background-color: rgb(246, 204, 204);
+}
+.inprogressClr {
+  /* color: white; */
+  background-color: rgb(164, 221, 233);
+}
+.reviewClr {
+  /* color: white; */
+  background-color: rgb(243, 228, 190);
+}
+.doneClr {
+  /* color: white; */
+  background-color: rgb(202, 248, 202);
 }
