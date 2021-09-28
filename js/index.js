@@ -216,6 +216,6 @@ cardList.addEventListener("click", (event) => {
     newTaskManager.updateTaskToDone(Number(taskId[1]));
 
     // render the updated html
-    newTaskManager.render();
+    newTaskManager.renderInColumns();
   }
 });

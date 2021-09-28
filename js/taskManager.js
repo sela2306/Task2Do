@@ -20,10 +20,6 @@ class TaskManager {
   createTaskHtml(id, name, description, assignedTo, dueDate, status) {
     // status array
     let arrStatus = ["To-do", "In-progress", "Review", "Done"];
-    // todoClr
-    // inprogressClr
-    // reviewClr
-    // doneClr
     let arrTaskColor = ["todoClr", "inprogressClr", "reviewClr", "doneClr"];
     // status image array
     let arrStatusImage = [
@@ -79,7 +75,7 @@ class TaskManager {
 
     return html;
   }
-// rendering cards on main index page
+  // rendering cards on main index page
   render() {
     const tasksHtmlList = [];
 
@@ -99,80 +95,115 @@ class TaskManager {
 
     document.querySelector("#cardList").innerHTML = tasksHtmlList.join("\n");
   }
-// changing to Done status
+  // changing to Done status
   updateTaskToDone(taskId) {
     this.tasks[taskId].status = "Done";
   }
 
+  // render the tasks in four columns based on status
   renderInColumns() {
-    const tasksHtmlList1 = [];
-    const tasksHtmlList2 = [];
-    const tasksHtmlList3 = [];
-    const tasksHtmlList4 = [];
 
-    for (let i = 0; i < this.tasks.length; i++) {
-      let temp = this.tasks[i];
-      console.log(temp["name"]);
-     
-      if(temp.status ==="To-do") {
-        tasksHtmlList1.push(this.tasks[i]);
-      } else if(temp.status ==="In-progress") {
-        tasksHtmlList2.push(this.tasks[i]);
-      } else if(temp.status ==="Review") {
-        tasksHtmlList3.push(this.tasks[i]);
-      } else if(temp.status ==="Done") {
-        tasksHtmlList4.push(this.tasks[i]);
-      } 
-    }
-    console.log("Four Arrays..");
-    console.log(tasksHtmlList1);
-    console.log(tasksHtmlList2);
-    console.log(tasksHtmlList3);
-    console.log(tasksHtmlList4);
+    // filter the task array and divid tasks into four arrays based on status
+    let tasksHtmlList1 = this.tasks.filter((arr) => {
+      return arr.status === "To-do";
+    });
 
-    let rowMax = Math.max(tasksHtmlList1.length,tasksHtmlList2.length, tasksHtmlList3.length, tasksHtmlList4.length);
-    console.log(`Biggest Array..${rowMax}`);
+    let tasksHtmlList2 = this.tasks.filter((arr) => {
+      return arr.status === "In-progress";
+    });
 
+    let tasksHtmlList3 = this.tasks.filter((arr) => {
+      return arr.status === "Review";
+    });
+
+    let tasksHtmlList4 = this.tasks.filter((arr) => {
+      return arr.status === "Done";
+    });
+
+    // get the max-length of the four arrays : 
+    //this gives us the total number of rows to create
+    let rowMax = Math.max(
+      tasksHtmlList1.length,
+      tasksHtmlList2.length,
+      tasksHtmlList3.length,
+      tasksHtmlList4.length
+    );
+// loop through the task array rowMax times and create the task columns for each row
     const tasksHtmlList = [];
-    for (let i=0; i < rowMax; i++){
-      let temp1 = tasksHtmlList1[i];
-      let temp2 = tasksHtmlList2[i];
-      let temp3 = tasksHtmlList3[i];
-      let temp4 = tasksHtmlList4[i];
+    for (let i = 0; i < rowMax; i++) {
+      let tempHtml =
+        this.makeHtmlRow(tasksHtmlList1[i]) +
+        this.makeHtmlRow(tasksHtmlList2[i]) +
+        this.makeHtmlRow(tasksHtmlList3[i]) +
+        this.makeHtmlRow(tasksHtmlList4[i]);
 
-      let tempHtml = this.makeHtmlRow(temp1.name, temp1.description, temp1.assignedTo, temp1.dueDate, temp1.status);
-      tempHtml = tempHtml + this.makeHtmlRow(temp2.name, temp2.description, temp2.assignedTo, temp2.dueDate, temp2.status);
-      tempHtml = tempHtml + this.makeHtmlRow(temp3.name, temp3.description, temp3.assignedTo, temp3.dueDate, temp3.status);
-      tempHtml = tempHtml + this.makeHtmlRow(temp4.name, temp4.description, temp4.assignedTo, temp4.dueDate, temp4.status);
-
-      let layoutDivs =
-      `<div class="row">
+        // add the columns to the row div
+      let layoutDivs = `<div class="row">
       ${tempHtml}
-      </div>`
+      </div>`;
       tasksHtmlList.push(layoutDivs);
     }
+    // disply the tasks in the card list div
     document.querySelector("#cardList").innerHTML = tasksHtmlList.join("\n");
-    
   }
-  makeHtmlRow(name, description, assignedTo, date, status) {
-    let layoutDivs =
-      `
-      <div class="col">name: ${name}, status: ${status}</div>
-       
-        `
-      return layoutDivs;
-  }
-}
-/*4 arrays -- a1.2, a2.4, a3.0, a4.1
- rowCounter=0
-  for(i=0 1<4 i++){
-    if a1 or a2 or a3 === ""
-    {
-      undefined
+
+
+  // function to create the columns html for each task type
+  makeHtmlRow(arrTask = []) {
+
+    // set the empty column div
+    let layoutDivs = '<div class="col-sm-8 col-md-4 col-lg-3 my-3"></div>';
+    // if the array is not empty, create the the html task div
+    if (arrTask.length != 0) {
+
+             /// set task image and colour based on task type
+            //********************************************************** */
+            let arrStatus = ["To-do", "In-progress", "Review", "Done"];
+            let arrTaskColor = ["todoClr", "inprogressClr", "reviewClr", "doneClr"];
+            // status image array
+            let arrStatusImage = ["bi-filter-circle","bi-dash-circle-dotted","bi-search","bi-check2-circle"];
+            // find status-image based on the index  of currunt status
+            let imgStatus = arrStatusImage[arrStatus.indexOf(arrTask.status)];
+            // get task text color from array
+            let textColor = arrTaskColor[arrStatus.indexOf(arrTask.status)];
+            // add/remove 'done' button html on the tasks
+            let doneButton = "";
+
+            if (arrTask.status === "Done") doneButton = "";
+            else
+              doneButton = `<button class="btn modalBtnColor doneButton" id="doneButton-${arrTask.id}" type="button">Done</button>`;
+
+            layoutDivs = `
+            <div class="col-sm-8 col-md-4 col-lg-3 my-3" id="task-${arrTask.id}">
+            <div class="card mb-3" >
+                <div class="card-header ${textColor} border-secondary">
+                    <div class="d-flex justify-content-between ">
+                        <div class="align-self-center">
+                        <h5 class="cardTitleText">${arrTask.name}</h5>
+                        <p id="status" class="fst-italic ">${arrTask.status}</p></div>
+                        <div class="bi ${imgStatus}"></div>
+                      </div>
+                
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    ${arrTask.description}
+                  </p>
+                  <h6 class="card-title">Due: ${arrTask.dueDate}</h6>
+                  <p>${arrTask.assignedTo}</p>
+                </div>
+                <div class="card-footer bg-transparent border-secondary">
+                  <div class="d-flex justify-content-end gap-2">
+                    ${doneButton}
+                    <button class="btn modalBtnColor" type="button">
+                      Delete
+                    </button>
+                  </div></div>
+                </div>
+              </div> `;
+
     }
-    <div class="col">a1.1</div>
-    <div class="col">a2.1</div>
-    <div class="col">a3.1</div>
-    <div class="col">a4.1</div>
+
+    return layoutDivs;
+  }
 }
-*/
