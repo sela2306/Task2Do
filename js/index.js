@@ -144,6 +144,7 @@ function validFormFieldInput(event) {
       newDate,
       newTaskStatusVal
     );
+    // console.log("All the tasks inside the array..")
     console.log(newTaskManager.tasks);
     // reset form to make ready for next task input
     resetFormFieldInput();
@@ -155,7 +156,8 @@ function validFormFieldInput(event) {
       newDate,
       newTaskStatusVal
     );
-    newTaskManager.render();
+    // newTaskManager.render();
+    newTaskManager.renderInColumns();
     console.log(taskHtml);
   } else {
     isValidCount = 0; // reset count if any field is invalid
