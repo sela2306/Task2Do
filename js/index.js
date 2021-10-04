@@ -148,8 +148,7 @@ function validFormFieldInput(event) {
     );
 
     newTaskManager.save();
-    // console.log("All the tasks inside the array..")
-    console.log(newTaskManager.tasks);
+    console.log("All the tasks inside the array..", newTaskManager.tasks);
     // reset form to make ready for next task input
     resetFormFieldInput();
     // render the tasks on the page
@@ -199,7 +198,7 @@ cardList.addEventListener("click", (event) => {
   if (event.target.classList.contains("doneButton")) {
     // get button task id
     let taskId = event.target.id.split("-");
-    console.log(taskId);
+    console.log("Done button Id..",taskId);
     // find the task in the task array
     // change In-Progress / Review / To-do to Done
     newTaskManager.updateTaskToDone(Number(taskId[1]));
@@ -210,6 +209,7 @@ cardList.addEventListener("click", (event) => {
 //if delete button is clicked, delete task
   if (event.target.classList.contains("delete-button")) {
     let taskId = event.target.id.split("-");
+    console.log("Delete button Id..",taskId);
     // find the task in the task array and delete
     newTaskManager.deleteTask(Number(taskId[1]));
     newTaskManager.save();

@@ -17,9 +17,9 @@ class TaskManager {
     this.tasks.push(task);
   }
 
-  // changing to Done status
-  updateTaskToDone(taskId) {
-    this.getTask(taskId).status = "Done";
+// changing to Done status
+updateTaskToDone(taskId) {
+  this.getTask(taskId).status = "Done";
    }
 
 // get selected task
@@ -54,26 +54,25 @@ getTask(taskId){
   save() {
     // save task if tasks list is not empty
     if (this.tasks.length != 0) {
-    let tasksJson = JSON.stringify(this.tasks);
+    let tasksJson = JSON.stringify(this.tasks); //converting tasks to JSON string
     localStorage.setItem("tasks", tasksJson);
-    console.log("ttasksJson: ", tasksJson);
+    
+    let currentID = this.currentId.toString(); //converting Id to string
+    localStorage.setItem("currentID",currentID);
 
-    let currentID = this.currentId.toString();
-   localStorage.setItem("currentID",currentID)
     } else {
       // clear storage and reset current id to 0
       localStorage.clear();
       this.currentId = 0;
-      console.log("empty tasks");
+      console.log("Clearing storage when task list is empty.");
     }
-    
-
+   
   }
 //load from local storage
   load() {
     let tasksJson = localStorage.getItem("tasks");
     if (tasksJson) {
-      this.tasks = JSON.parse(tasksJson);
+      this.tasks = JSON.parse(tasksJson); //converting JSON string to task array
       let tempID = localStorage.getItem("currentID");
       if (tempID)
       this.currentId = Number(tempID);
@@ -109,18 +108,13 @@ getTask(taskId){
     document.querySelector("#cardList").innerHTML = tempHtml;
   }
 
-  // function to create the columns html for each task type
+  // function to create the row html for each task type
   createTaskHtml(arrTask = []) {
 
-    
-    // set the empty column div
-    // let html =
-    //   '<div class="col-sm-8 col-md-4 col-lg-3 my-3" data-column="noNewTasks"></div>';
     // if the array is not empty, create the the html task div
     if (arrTask.length != 0) {
      
       // set task image and colour based on task type
-      //********************************************************** */
       let arrStatus = ["To-do", "In-progress", "Review", "Done"];
       let arrTaskColor = ["todoClr", "inprogressClr", "reviewClr", "doneClr"];
       // status image array
@@ -134,7 +128,6 @@ getTask(taskId){
       let imgStatus = arrStatusImage[arrStatus.indexOf(arrTask[0].status)];
       // get task text color from array
       let textColor = arrTaskColor[arrStatus.indexOf(arrTask[0].status)];
-      // add/remove 'done' button html on the tasks
       let doneButton = "";
       const tasksColumnList = [];
       // loop through task array and create the html
@@ -143,9 +136,8 @@ getTask(taskId){
         if (arrTask[i].status === "Done") doneButton = "";
       else
         doneButton = `<button class="btn modalBtnColor doneButton" id="doneButton-${arrTask[i].id}" type="button">Done</button>`;
-
+        //cards
         let html = `
-
         <div class="col-sm-8 col-md-4 col-lg-3 my-3" data-column="noNewTasks">
             <div class="card mb-3" id="task-${arrTask[i].id}">
                 <div class="card-header ${textColor} border-secondary">
@@ -166,13 +158,9 @@ getTask(taskId){
                 <div class="card-footer bg-transparent border-secondary">
                   <div class="d-flex justify-content-end gap-2">
                     ${doneButton}
-                    <button class="btn modalBtnColor delete-button" type="button" id="deleteButton-${arrTask[i].id}">
-                      Delete
-                    </button>
-                    
+                    <button class="btn modalBtnColor delete-button" type="button" id="deleteButton-${arrTask[i].id}"> Delete</button>
                   </div></div>
-                </div></div>
-              `;
+                </div></div>`;
 
         tasksColumnList.push(html);
       }
