@@ -1,9 +1,12 @@
+*{
+box-sizing: border-box;
+}
+
 section {
   margin-top: 60px;
 }
 /* header images and text CSS */
 .header-img {
-  /* background-color: rgb(125, 100, 148); */
   width: 100%;
   max-height: 70vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -33,20 +36,13 @@ h5 {
 }
 /* end header */
 
+/* button colors*/
 .myBtnColor {
-  /* background-color:rgb(220,193,193) ; */
-  /* background-color: rgb(198,82,117); */
-  /* background-color: rgb(224,160,181); */
-  /* Sunitha */
-  /* background-color: rgb(91,111,110); */
   color: white;
-  /* added by tara */
   background-color: rgb(140, 43, 94);
 }
 .myBtnColor:hover {
   color: rgb(245, 243, 243);
-  background-color: rgb(60, 73, 72);
-
   background-color: rgb(96, 25, 72);
 }
 .modalBtnColor {
@@ -55,43 +51,51 @@ h5 {
 .modalBtnColor:hover {
   background-color: rgb(186, 209, 208);
 }
+
+/* model feedack span text */
 .fontSize {
   font-size: x-small;
   border: 1px solid white;
 }
+
+/* task card css */
 .card {
-  border-color: rgb(60, 73, 72);
-  /* border-radius: 10px; */
+ border-color: rgb(60, 73, 72); 
+  border-radius: 10px; 
   color: black;
+  min-height: 350px;
 }
 
-.cardHeadColor {
+.card-header{
+  border-top-left-radius: 9px !important;
+  border-top-right-radius: 9px !important;
   color: rgb(219, 72, 170);
 }
-
+/* task icon size and color */
 .bi {
-  font-size: 2rem;
-  color: rgb(70, 69, 69);
+  font-size: 1.5rem;
+  color: rgb(129, 126, 126);
+  
 }
-
-/* .card {
-  border-top-left-radius: 20%;
-  border-top-right-radius: 45%;
-} */
 /* colours for each task type */
 .todoClr {
-  /* color: white; */
   background-color: rgb(246, 204, 204);
+  border-radius: 10px; 
+  padding-top: 10px;
+  
 }
 .inprogressClr {
-  /* color: white; */
   background-color: rgb(164, 221, 233);
+  border-radius: 10px; 
+  padding-top: 10px;
 }
 .reviewClr {
-  /* color: white; */
   background-color: rgb(243, 228, 190);
+  border-radius: 10px; 
+  padding-top: 10px;
 }
 .doneClr {
-  /* color: white; */
   background-color: rgb(202, 248, 202);
+  border-radius: 10px; 
+  padding-top: 10px;
 }

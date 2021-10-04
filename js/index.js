@@ -144,19 +144,12 @@ function validFormFieldInput(event) {
       newDate,
       newTaskStatusVal
     );
+    // console.log("All the tasks inside the array..")
     console.log(newTaskManager.tasks);
     // reset form to make ready for next task input
     resetFormFieldInput();
-    // create the html for diplaying the tasks
-    const taskHtml = newTaskManager.createTaskHtml(
-      newTaskNameVal,
-      newTaskDescriptionVal,
-      newTaskAssignedToVal,
-      newDate,
-      newTaskStatusVal
-    );
+    // render the tasks on the page
     newTaskManager.render();
-    console.log(taskHtml);
   } else {
     isValidCount = 0; // reset count if any field is invalid
   }
@@ -212,6 +205,20 @@ cardList.addEventListener("click", (event) => {
     // find the task the task array
     // change In-Progress / Review / To-do to Done
     newTaskManager.updateTaskToDone(Number(taskId[1]));
+
+    // render the updated html
+    newTaskManager.render();
+  }
+
+  if (event.target.classList.contains("delete-button")) {
+    btnId = event.target.id;
+
+    // get task array id from button id
+    let taskId = btnId.split("-");
+
+    // find the task the task array
+    // change In-Progress / Review / To-do to Done
+    newTaskManager.deleteTask(Number(taskId[1]));
 
     // render the updated html
     newTaskManager.render();
