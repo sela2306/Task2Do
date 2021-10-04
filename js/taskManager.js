@@ -100,11 +100,11 @@ getTask(taskId){
       return arr.status === "Done";
     });
     // Make the four task columns and populate them with the tasks according to status
-    let tempHtml = '<div class="row">'+
-      this.createTaskHtml(arrTodo) + '</div>'+'<div class="row">'+
-      this.createTaskHtml(arrInProgress) + '</div>'+'<div class="row">'+
-      this.createTaskHtml(arrReview) + '</div>'+'<div class="row">'+
-      this.createTaskHtml(arrDone)+'</div>';
+    let tempHtml = 
+      this.createTaskHtml(arrTodo) + 
+      this.createTaskHtml(arrInProgress) + 
+      this.createTaskHtml(arrReview) + 
+      this.createTaskHtml(arrDone);
     // disply the tasks in the card list div
     document.querySelector("#cardList").innerHTML = tempHtml;
   }
@@ -114,8 +114,8 @@ getTask(taskId){
 
     
     // set the empty column div
-    let html =
-      '<div class="col-sm-8 col-md-4 col-lg-3 my-3" data-column="noNewTasks"></div>';
+    // let html =
+    //   '<div class="col-sm-8 col-md-4 col-lg-3 my-3" data-column="noNewTasks"></div>';
     // if the array is not empty, create the the html task div
     if (arrTask.length != 0) {
      
@@ -144,7 +144,7 @@ getTask(taskId){
       else
         doneButton = `<button class="btn modalBtnColor doneButton" id="doneButton-${arrTask[i].id}" type="button">Done</button>`;
 
-        html = `
+        let html = `
 
         <div class="col-sm-8 col-md-4 col-lg-3 my-3" data-column="noNewTasks">
             <div class="card mb-3" id="task-${arrTask[i].id}">
@@ -176,7 +176,7 @@ getTask(taskId){
 
         tasksColumnList.push(html);
       }
-  return tasksColumnList.join("\n");
+  return `<div class="row">${tasksColumnList.join("\n")}</div>`
     } // if no tasks exist, return empty column
     else
       return '';
