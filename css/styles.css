@@ -1,4 +1,4 @@
-.*{
+*{
 box-sizing: border-box;
 }
 
@@ -63,6 +63,7 @@ h5 {
  border-color: rgb(60, 73, 72); 
   border-radius: 10px; 
   color: black;
+  min-height: 350px;
 }
 
 .card-header{
@@ -72,20 +73,29 @@ h5 {
 }
 /* task icon size and color */
 .bi {
-  font-size: 2rem;
-  color: rgb(70, 69, 69);
+  font-size: 1.5rem;
+  color: rgb(129, 126, 126);
+  
 }
 /* colours for each task type */
 .todoClr {
   background-color: rgb(246, 204, 204);
   border-radius: 10px; 
+  padding-top: 10px;
+  
 }
 .inprogressClr {
   background-color: rgb(164, 221, 233);
+  border-radius: 10px; 
+  padding-top: 10px;
 }
 .reviewClr {
   background-color: rgb(243, 228, 190);
+  border-radius: 10px; 
+  padding-top: 10px;
 }
 .doneClr {
   background-color: rgb(202, 248, 202);
+  border-radius: 10px; 
+  padding-top: 10px;
 }

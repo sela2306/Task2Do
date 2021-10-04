@@ -148,17 +148,8 @@ function validFormFieldInput(event) {
     console.log(newTaskManager.tasks);
     // reset form to make ready for next task input
     resetFormFieldInput();
-    // create the html for diplaying the tasks
-    const taskHtml = newTaskManager.createTaskHtml(
-      newTaskNameVal,
-      newTaskDescriptionVal,
-      newTaskAssignedToVal,
-      newDate,
-      newTaskStatusVal
-    );
-    // newTaskManager.render();
-    newTaskManager.renderInColumns();
-    console.log(taskHtml);
+    // render the tasks on the page
+    newTaskManager.render();
   } else {
     isValidCount = 0; // reset count if any field is invalid
   }
@@ -216,6 +207,20 @@ cardList.addEventListener("click", (event) => {
     newTaskManager.updateTaskToDone(Number(taskId[1]));
 
     // render the updated html
-    newTaskManager.renderInColumns();
+    newTaskManager.render();
+  }
+
+  if (event.target.classList.contains("delete-button")) {
+    btnId = event.target.id;
+
+    // get task array id from button id
+    let taskId = btnId.split("-");
+
+    // find the task the task array
+    // change In-Progress / Review / To-do to Done
+    newTaskManager.deleteTask(Number(taskId[1]));
+
+    // render the updated html
+    newTaskManager.render();
   }
 });
