@@ -67,15 +67,6 @@ class TaskManager {
       '<div class="col-sm-8 col-md-4 col-lg-3 my-3" data-column="noNewTasks"></div>';
     // if the array is not empty, create the the html task div
     if (arrTask.length != 0) {
-      // const statusProperties = {
-      //   // status: ["To-do", "In-progress", "Review", "Done"],
-      //   // textColor: ["todoClr", "inprogressClr", "reviewClr", "doneClr"],
-      //   // statusImage: ["bi-filter-circle","bi-dash-circle-dotted","bi-search","bi-check2-circle"],
-      //   "To-do":         ["todoClr","bi-filter-circle"],
-      //   "In-progress":   ["inprogressClr","bi-filter-dotted"],
-      //   "Review":        ["reviewClr","bi-search"],
-      //   "Done":          ["doneClr","bi-check2-circle"],
-      // }
 
       // set task image and colour based on task type
       //********************************************************** */
