@@ -79,23 +79,14 @@ h5 {
 }
 /* colours for each task type */
 .todoClr {
-  background-color: rgb(246, 204, 204);
-  border-radius: 10px; 
-  padding-top: 10px;
-  
+  background-color: rgb(246, 204, 204); 
 }
 .inprogressClr {
   background-color: rgb(164, 221, 233);
-  border-radius: 10px; 
-  padding-top: 10px;
 }
 .reviewClr {
   background-color: rgb(243, 228, 190);
-  border-radius: 10px; 
-  padding-top: 10px;
 }
 .doneClr {
   background-color: rgb(202, 248, 202);
-  border-radius: 10px; 
-  padding-top: 10px;
 }

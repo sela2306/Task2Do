@@ -1,5 +1,7 @@
 // Initialize TaskManager class
 const newTaskManager = new TaskManager();
+newTaskManager.load();
+newTaskManager.render();
 // task form elements
 const newTaskName = document.querySelector("#newTask-name");
 const newTaskDescription = document.querySelector("#newTask-description");
@@ -144,6 +146,8 @@ function validFormFieldInput(event) {
       newDate,
       newTaskStatusVal
     );
+
+    newTaskManager.save();
     // console.log("All the tasks inside the array..")
     console.log(newTaskManager.tasks);
     // reset form to make ready for next task input
@@ -191,35 +195,24 @@ myModal.addEventListener("hidden.bs.modal", function (event) {
 // add done button function
 const cardList = document.querySelector("#cardList");
 cardList.addEventListener("click", (event) => {
-  // "event" here is the event parameter
+ //if done button is clicked, mark task as done
   if (event.target.classList.contains("doneButton")) {
-    // get button id
-
-    btnId = event.target.id;
-    console.log(btnId);
-
-    // get task array id from button id
-    let taskId = btnId.split("-");
+    // get button task id
+    let taskId = event.target.id.split("-");
     console.log(taskId);
-
-    // find the task the task array
+    // find the task in the task array
     // change In-Progress / Review / To-do to Done
     newTaskManager.updateTaskToDone(Number(taskId[1]));
-
+    newTaskManager.save();
     // render the updated html
     newTaskManager.render();
   }
-
+//if delete button is clicked, delete task
   if (event.target.classList.contains("delete-button")) {
-    btnId = event.target.id;
-
-    // get task array id from button id
-    let taskId = btnId.split("-");
-
-    // find the task the task array
-    // change In-Progress / Review / To-do to Done
+    let taskId = event.target.id.split("-");
+    // find the task in the task array and delete
     newTaskManager.deleteTask(Number(taskId[1]));
-
+    newTaskManager.save();
     // render the updated html
     newTaskManager.render();
   }
