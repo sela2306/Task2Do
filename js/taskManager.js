@@ -22,6 +22,22 @@ updateTaskToDone(taskId) {
   this.getTask(taskId).status = "Done";
    }
 
+// edit task
+editTask(taskId, name, description, assignedTo, dueDate, status) {
+  
+  for (let i = 0; i < this.tasks.length; i++) {
+    // search for taskID in this.task array and update the task
+    if (this.tasks[i].id === taskId){
+      this.tasks[i].name = name;
+      this.tasks[i].description = description;
+      this.tasks[i].assignedTo = assignedTo;
+      this.tasks[i].dueDate = dueDate;
+      this.tasks[i].status = status;
+      console.log("Edited task", this.tasks[i].name);
+    }
+  }
+  
+}
 // get selected task
 getTask(taskId){
   let temp =[];
@@ -158,6 +174,7 @@ getTask(taskId){
                 <div class="card-footer bg-transparent border-secondary">
                   <div class="d-flex justify-content-end gap-2">
                     ${doneButton}
+                    <button class="btn modalBtnColor edit-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button" id="editButton-${arrTask[i].id}"> Edit</button>
                     <button class="btn modalBtnColor delete-button" type="button" id="deleteButton-${arrTask[i].id}"> Delete</button>
                   </div></div>
                 </div></div>`;
