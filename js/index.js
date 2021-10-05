@@ -250,15 +250,18 @@ cardList.addEventListener("click", (event) => {
 myModal.addEventListener('show.bs.modal', function (event) {
   // Button that triggered the modal
   let button = event.relatedTarget
-  
-  if (button.classList.contains("edit-button")) {
   let modalTitle = myModal.querySelector('.modal-title');
   let modalBtnAdd = myModal.querySelector('#btnNewTaskAdd');
   let modalBtnReset = myModal.querySelector('#btnNewTaskReset');
-  
+  if (button.classList.contains("edit-button")) {
+   
   modalBtnAdd.innerText = "Done";
   modalTitle.textContent = 'Edit task';
   modalBtnReset.style.display = "none";
+  } else {
+    modalBtnAdd.innerText = "Add task";
+  modalTitle.textContent = 'Add task';
+  modalBtnReset.style.display = "block";
   }
 });
 
