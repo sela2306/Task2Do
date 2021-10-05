@@ -161,6 +161,8 @@ function validFormFieldInput(event) {
     resetFormFieldInput();
     // render the tasks on the page
     newTaskManager.render();
+    let btnCloseModal = document.getElementById('btnCloseModal')
+    btnCloseModal.click();
   } else {
     isValidCount = 0; // reset count if any field is invalid
   }
