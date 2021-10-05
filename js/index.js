@@ -20,7 +20,8 @@ let inValidFeedback3 = document.querySelector(".in-valid-feedback3");
 let inValidFeedback4 = document.querySelector(".in-valid-feedback4");
 let inValidFeedback5 = document.querySelector(".in-valid-feedback5");
 
-let isValidCount = 0;
+let isValidCount = 0; //validation counter
+let isEdit = [false, 0]; //toggle edit array 
 
 // validate input fields
 function validateInput(event, feedbackEvent, inputType) {
@@ -138,7 +139,14 @@ function validFormFieldInput(event) {
     const formattedDate = newTaskDateVal.split("-");
     let newDate = `${formattedDate[2]}/${formattedDate[1]}/${formattedDate[0]}`;
 
-    // add task to the array
+    // Checking if edit or add new task 
+    if (isEdit[0]){
+      newTaskManager.editTask(isEdit[1], newTaskNameVal,
+      newTaskDescriptionVal,
+      newTaskAssignedToVal,
+      newDate,
+      newTaskStatusVal);
+    } else {
     newTaskManager.addTask(
       newTaskNameVal,
       newTaskDescriptionVal,
@@ -146,7 +154,7 @@ function validFormFieldInput(event) {
       newDate,
       newTaskStatusVal
     );
-
+    }
     newTaskManager.save();
     console.log("All the tasks inside the array..", newTaskManager.tasks);
     // reset form to make ready for next task input
@@ -212,6 +220,25 @@ cardList.addEventListener("click", (event) => {
     console.log("Delete button Id..",taskId);
     // find the task in the task array and delete
     newTaskManager.deleteTask(Number(taskId[1]));
+    newTaskManager.save();
+    // render the updated html
+    newTaskManager.render();
+  }
+  //if edit button is clicked, edit task
+  if (event.target.classList.contains("edit-button")) {
+    let taskId = event.target.id.split("-");
+    console.log("Edit button Id..",taskId);
+    let taskToEdit = newTaskManager.getTask(Number(taskId[1]));
+    let tempDate = taskToEdit.dueDate.split("/");
+    //populating selected card values into modal form
+    let tempDate2 = `${tempDate[2]}-${tempDate[1]}-${tempDate[0]}`;
+    newTaskName.value = taskToEdit.name;
+    newTaskDescription.value = taskToEdit.description;
+    newTaskAssignedTo.value = taskToEdit.assignedTo ;
+    newTaskDate.value = tempDate2;
+    newTaskStatus.value = taskToEdit.status;
+    isEdit = [true, Number(taskId[1])]; //save taskId to isEdit array
+    //save edited values
     newTaskManager.save();
     // render the updated html
     newTaskManager.render();
