@@ -151,7 +151,8 @@ getTask(taskId){
         // if status is 'done' add done button
         if (arrTask[i].status === "Done") doneButton = "";
       else
-        doneButton = `<button class="btn modalBtnColor doneButton" id="doneButton-${arrTask[i].id}" type="button">Done</button>`;
+        doneButton = `<button class="btn bi bi-check-circle-fill
+        modalBtnColor doneButton" title="Mark as Done" id="doneButton-${arrTask[i].id}" type="button"></button>`;
         //cards
         let html = `
         <div class="col-sm-8 col-md-4 col-lg-3 my-3" data-column="noNewTasks">
@@ -174,8 +175,10 @@ getTask(taskId){
                 <div class="card-footer bg-transparent border-secondary">
                   <div class="d-flex justify-content-end gap-2">
                     ${doneButton}
-                    <button class="btn modalBtnColor edit-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button" id="editButton-${arrTask[i].id}"> Edit</button>
-                    <button class="btn modalBtnColor delete-button" type="button" id="deleteButton-${arrTask[i].id}"> Delete</button>
+                    <button class="btn bi bi-pencil-fill
+                    modalBtnColor edit-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button" title="Edit" id="editButton-${arrTask[i].id}"></button>
+                    <button class="btn bi bi-trash-fill
+                    modalBtnColor delete-button" type="button" title="Delete" id="deleteButton-${arrTask[i].id}"></button>
                   </div></div>
                 </div></div>`;
 
