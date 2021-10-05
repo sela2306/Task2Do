@@ -243,4 +243,22 @@ cardList.addEventListener("click", (event) => {
     // render the updated html
     newTaskManager.render();
   }
+  
 });
+
+// change add task to edit task in modal if edit is clicked
+myModal.addEventListener('show.bs.modal', function (event) {
+  // Button that triggered the modal
+  let button = event.relatedTarget
+  
+  if (button.classList.contains("edit-button")) {
+  let modalTitle = myModal.querySelector('.modal-title');
+  let modalBtnAdd = myModal.querySelector('#btnNewTaskAdd');
+  let modalBtnReset = myModal.querySelector('#btnNewTaskReset');
+  
+  modalBtnAdd.innerText = "Done";
+  modalTitle.textContent = 'Edit task';
+  modalBtnReset.style.display = "none";
+  }
+});
+

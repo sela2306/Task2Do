@@ -90,3 +90,13 @@ h5 {
 .doneClr {
   background-color: rgb(202, 248, 202);
 }
+/* edit, done and delete button colors*/
+.bi-check-circle-fill{
+  color: green;
+}
+.bi-pencil-fill{
+  color: orange;
+}
+.bi-trash-fill{
+  color: rgb(250, 107, 107);
+}
