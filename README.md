@@ -6,18 +6,15 @@
  :heavy_check_mark:Add/edit/delete tasks with the click of a button!  
  :heavy_check_mark:Tasks are sorted based on status -todo, in-progress, review and done.  
 
-
-
-## Authors
-
-👩 [@Sumitha](https://github.com/sela2306/)  
-👩 [@Tara](https://github.com/metaTara)  
-
 ## Technologies
 :writing_hand: HTML5/CSS  
 :writing_hand:BOOTSTRAP5  
 :writing_hand:JAVASCRIPT ES6+
 
+## Authors
+
+👩 [@Sumitha](https://github.com/sela2306/)  
+👩 [@Tara](https://github.com/metaTara)  
 
 ## Acknowledgements
 
