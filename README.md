@@ -13,7 +13,12 @@
 👩 [@Sumitha](https://github.com/sela2306/)  
 👩 [@Tara](https://github.com/metaTara)  
 
-  
+## Technologies
+:writing_hand: HTML5/CSS  
+:writing_hand:BOOTSTRAP5  
+:writing_hand:JAVASCRIPT ES6+
+
+
 ## Acknowledgements
 
  - [Generation Australia](https://australia.generation.org/)
