@@ -2,7 +2,7 @@
 
 :heavy_check_mark: [Task2Do](https://sela2306.github.io/Task2Do/)
  is a quick and easy task planner to plan a task or event.  
- Add/edit/delete tasks with the click of a button!
+ Add/edit/delete tasks with the click of a button!  
  Tasks are sorted based on status -todo, in-progress, review and done.  
 
 
