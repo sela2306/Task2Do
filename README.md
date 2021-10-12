@@ -1,4 +1,5 @@
-# Task2Do
+## <img src="https://github.com/sela2306/Task2Do/blob/main/images/logo.png" alt="drawing" width="30"/> Task2Do 
+
 
 :heavy_check_mark: [Task2Do](https://sela2306.github.io/Task2Do/)
  is a quick and easy task planner to plan a task or event.  
