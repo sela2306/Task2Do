@@ -146,6 +146,7 @@ function validFormFieldInput(event) {
       newTaskAssignedToVal,
       newDate,
       newTaskStatusVal);
+      isEdit[0] = false;
     } else {
     newTaskManager.addTask(
       newTaskNameVal,

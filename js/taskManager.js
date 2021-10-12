@@ -21,10 +21,8 @@ class TaskManager {
 updateTaskToDone(taskId) {
   this.getTask(taskId).status = "Done";
    }
-
 // edit task
 editTask(taskId, name, description, assignedTo, dueDate, status) {
-  
   for (let i = 0; i < this.tasks.length; i++) {
     // search for taskID in this.task array and update the task
     if (this.tasks[i].id === taskId){
@@ -36,7 +34,18 @@ editTask(taskId, name, description, assignedTo, dueDate, status) {
       console.log("Edited task", this.tasks[i].name);
     }
   }
-  
+}
+// delete task
+deleteTask(taskId) {
+  let temp = this.getTask(taskId);
+  console.log("delete task function",temp);
+  let newTasks = [];
+  for (let i = 0; i < this.tasks.length; i++) {
+    let task = this.tasks[i];
+    if (task.id != temp.id) newTasks.push(task);
+  }
+  this.tasks = newTasks;
+  // if this.tasks is empty, reset currentID to 0
 }
 // get selected task
 getTask(taskId){
@@ -51,20 +60,7 @@ getTask(taskId){
   return temp;
 }
 
-// delete task
-  deleteTask(taskId) {
 
-    let temp = this.getTask(taskId);
-    console.log("delete task function",temp);
-    let newTasks = [];
-    for (let i = 0; i < this.tasks.length; i++) {
-      let task = this.tasks[i];
-      if (task.id != temp.id) newTasks.push(task);
-    }
-    this.tasks = newTasks;
-    // if this.tasks is empty, reset currentID to 0
-    
-  }
 
   // save to localStorage
   save() {
